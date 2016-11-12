@@ -7,4 +7,4 @@
  */
 
 
-include("explore.html");
+include("explore2.html");
