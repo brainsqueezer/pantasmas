@@ -103,27 +103,23 @@
             img.onload = function() {
                 ctx.drawImage(img, 0, 0);
                 setTimeout(glitchJpeg, 50);
-            };
+            }
             img.src = byteArrayToBase64(glitchCopy);
         }
 
-
-        function GlitchThis() {
-
-            var initialImage = new Image();
-            var imgDataArr;
-            initialImage.onload = function() {
-                ctx.drawImage(initialImage, 0, 0);
-                var imgData = canvas.toDataURL("image/jpeg");
-                imgDataArr = base64ToByteArray(imgData);
-                detectJpegHeaderSize(imgDataArr);
-                glitchJpeg();
-                // console.log(imgData.substring(0,30));
-                // console.log(imgDataArr.slice(0, 30));
-                // console.log (img.src.substring(0,30));
-            };
-            initialImage.src = "./code.jpg";
-        }
+        var initialImage = new Image();
+        var imgDataArr;
+        initialImage.onload = function() {
+            ctx.drawImage(initialImage, 0, 0);
+            var imgData = canvas.toDataURL("image/jpeg");
+            imgDataArr = base64ToByteArray(imgData);
+            detectJpegHeaderSize(imgDataArr);
+            glitchJpeg();
+            // console.log(imgData.substring(0,30));
+            // console.log(imgDataArr.slice(0, 30));
+            // console.log (img.src.substring(0,30));
+        };
+        initialImage.src = "./code.jpg";
     </script>
 </body>
 </html>
