@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/dimsemenov/Magnific-Popup/master/dist/magnific-popup.css" />
+
+
+ <style>
+     .popup-gallery {
+         position: absolute;
+         height: 100%;
+         width: 100%;
+         top: 0px;
+         left: 0px;
+     }
+ </style>
+</head>
+
+<body style="background-color: #2F3438;text-align: center;">
+
+
+
+
+<div id="explorador" style="
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    overflow-x: hidden;
+    width: 100%;
+    /* text-align: center; */
+"><img src="images/booo_explore.jpg" style="margin-left: -600px;position: absolute;left: 50%;display: block;width: 1200px;"></div>
+
+<div class="popup-gallery" style="display: none">
+    <a href="galeria/00.jpg" title="Imagen 00"><img src="galeria/00.jpg"></a>
+    <a href="galeria/01.jpg" title="Imagen 00"><img src="galeria/01.jpg" ></a>
+    <a href="galeria/02.jpg" title="Imagen 00"><img src="galeria/02.jpg"></a>
+    <a href="galeria/02b.jpg" title="Imagen 00"><img src="galeria/02b.jpg"></a>
+    <a href="galeria/03.jpg" title="Imagen 00"><img src="galeria/03.jpg"></a>
+    <a href="galeria/03b.jpg" title="Imagen 00"><img src="galeria/03b.jpg"></a>
+</div>
+
+<script>
+
+
+    //$("#explorador").click(function() {
+        console.log("booo click");
+        /*
+        $('.popup-gallery').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+
+            image: {
+                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                titleSrc: function(item) {
+                    return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+                }
+            }
+        });
+
+        */
+        $('#explorador').magnificPopup({
+            items: [
+                {
+                    src: 'galeria/00.jpg'
+                },
+                {
+                    src: 'https://www.youtube.com/watch?v=Cd6JFC9Yr6Q',
+                    type: 'iframe' // this overrides default type
+                },
+                {
+                    src: $('<div>Dynamically created element</div>'), // Dynamically created element
+                    type: 'inline'
+                },
+                {
+                    src: '<div>HTML string</div>',
+                    type: 'inline'
+                },
+                {
+                    src: '#my-popup', // CSS selector of an element on page that should be used as a popup
+                    type: 'inline'
+                }
+            ],
+            gallery: {
+                enabled: true
+            },
+            type: 'image' // this is default type
+        });
+    //});
+
+
+</script>
+
+</body>
+
+</html>
