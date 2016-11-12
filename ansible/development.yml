@@ -1,0 +1,11 @@
+---
+- name: Deploys the whole software stack for a PHP application
+  hosts: development
+  user: vagrant
+  sudo: yes
+
+
+  roles:
+    - system
+    - php
+    - bennojoy.nginx
