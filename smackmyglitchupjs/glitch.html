@@ -93,7 +93,7 @@
             var rnd = Math.floor(jpgHeaderLength + Math.random() * (strArr.length - jpgHeaderLength - 4));
             strArr[rnd] = Math.floor(Math.random() * 256);
         }
-        
+
         function glitchJpeg() {
             var glitchCopy = imgDataArr.slice();
             for (var i = 0; i < 10; i++) {
@@ -103,23 +103,27 @@
             img.onload = function() {
                 ctx.drawImage(img, 0, 0);
                 setTimeout(glitchJpeg, 50);
-            }
+            };
             img.src = byteArrayToBase64(glitchCopy);
         }
-        
-        var initialImage = new Image();
-        var imgDataArr;
-        initialImage.onload = function() {
-            ctx.drawImage(initialImage, 0, 0);
-            var imgData = canvas.toDataURL("image/jpeg");
-            imgDataArr = base64ToByteArray(imgData);
-            detectJpegHeaderSize(imgDataArr);
-            glitchJpeg();
-            // console.log(imgData.substring(0,30));
-            // console.log(imgDataArr.slice(0, 30));
-            // console.log (img.src.substring(0,30));
-        };
-        initialImage.src = "./code.jpg";
+
+
+        function GlitchThis() {
+
+            var initialImage = new Image();
+            var imgDataArr;
+            initialImage.onload = function() {
+                ctx.drawImage(initialImage, 0, 0);
+                var imgData = canvas.toDataURL("image/jpeg");
+                imgDataArr = base64ToByteArray(imgData);
+                detectJpegHeaderSize(imgDataArr);
+                glitchJpeg();
+                // console.log(imgData.substring(0,30));
+                // console.log(imgDataArr.slice(0, 30));
+                // console.log (img.src.substring(0,30));
+            };
+            initialImage.src = "./code.jpg";
+        }
     </script>
 </body>
 </html>
